@@ -1,0 +1,38 @@
+package com.ananya;
+
+import java.util.Arrays;
+
+public class ZeroSubsequentProblem {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		int a[] = {1, 0, -2};
+		int n = 0;
+        System.out.println(countSubSeq(a,n));
+
+	}
+
+	 static int countSubSeq(int A[], int target) {
+		// TODO Auto-generated method stub
+		 // Base case
+		 int z =0 , x=0, y=0, ans=0;
+		 Arrays.sort(A);
+	        int res = 0, n = A.length, l = 0, r = n - 1, mod = (int)1e9 + 7;
+	        int[] pows = new int[n];
+	        pows[0] = 1;
+	        for (int i = 1 ; i < n ; i++)
+	        {
+	        	if(A[i] == 0) z++;
+	        	else if(A[i] < 0) x++;
+	            else y++;
+	        }
+	        ans += int ((1<<((long)z)-1)*((1<<((long)x))-1);
+	        ans += ((1<<((long)y))-1)*((1<<((long)z))-1);
+	        ans += ((1<<((long)z))-1);
+	        	
+	        
+	        return ans;
+
+}
+}
